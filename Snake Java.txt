@@ -1,0 +1,340 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Snake {
+	Scanner scan = new Scanner (System.in);
+	Random dice = new Random();
+	public void Clear() { // u menghapus console
+		int i;
+		for(i=0; i<30; i++){
+			System.out.println();
+		}
+		
+	}
+	public void TwoPlayers(){
+		boolean check = false; // u nilai awal
+		boolean check2 = false;
+		int dice1;
+		int dice2;
+		int ronde = 0;
+		int round; // u looping
+		int total1 = 0;
+		int total2 = 0;
+		int move1 = 0;
+		int move2 = 0;
+		int old1 = 0;
+		int old2 = 0;
+		System.out.println(" _______________");
+		System.out.println("| Round |     Player A     |     Player B     |");
+		System.out.println("|       | Old | Dice | New | Old | Dice | New |");
+		System.out.println(" ---------------------------------------------");
+		
+		for(round=0; round<25; round++){
+			ronde++;
+			dice1 = 1+dice.nextInt(6);
+			dice2 = 1+dice.nextInt(6);
+			total1 = move1;
+			total1 += dice1;
+			move1 += dice1;
+			old1 = move1-dice1;
+			
+			if(move1 > 100){
+				total1 = total1 - 100;
+				move1 = 100  - total1;
+			}
+			if(move1 == 13){
+				move1 = 7;
+				total1 = 7;
+			}else if(move1 == 25){
+				move1 = 40;
+				total1 = 40;
+			}else if(move1 == 50){
+				move1 = 38;
+				total1 = 38;
+			}else if(move1 == 63){
+				move1 = 78;
+				total1 = 78;
+			}else if(move1 == 83){
+				move1 = 97;
+				total1 = 97;
+			}else if(move1 == 95){
+				move1 = 76;
+				total1 = 76;
+			}
+			total2 = move2;
+			total2 += dice2;
+			move2 += dice2;
+			old2= move2-dice2;
+			
+			if(move2 > 100){
+				total2 = total2 - 100;
+				move2 = 100  - total2;
+			}
+			if(move2 == 13){
+				move2 = 7;
+				total2 = 7;
+			}else if(move2 == 25){
+				move2 = 40;
+				total2 = 40;
+			}else if(move2 == 50){
+				move2 = 38;
+				total2 = 38;
+			}else if(move2 == 63){
+				move2 = 78;
+				total2 = 78;
+			}else if(move2 == 83){
+				move2 = 97;
+				total2 = 97;
+			}else if(move2 == 95){
+				move2 = 76;
+				total2 = 76;
+			}
+			System.out.printf("|%4d   |%4d |%5d |%4d |%4d |%5d |%4d |\n", ronde, old1, dice1, move1, old2, dice2, move2);
+			System.out.print("______________________________________________");
+			scan.nextLine();
+			
+			if(move1 == 100){
+				check = true;
+				break;
+			}else if(move2 == 100){
+				check2 = true;
+				break;
+			}
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println("Winner");
+		
+		if(check == true){
+			System.out.println("1. Player A");
+			System.out.println("2. Player B");
+			
+		}else if(check2 == true){
+			System.out.println("1. Player B");
+			System.out.println("2. Player A");
+		}else{
+			if(move1 > move2){
+				System.out.println("1. Player A");
+				System.out.println("2. Player B");	
+			}else{
+				System.out.println("1. Player B");
+				System.out.println("2. Player A");
+			}
+		}
+
+	}
+	public void ThreePlayers(){
+		boolean check = false; // u nilai awal
+		boolean check2 = false;
+		boolean check3 = false;
+		int dice1;
+		int dice2;
+		int dice3;
+		int ronde = 0;
+		int round; // u looping
+		int total1 = 0;
+		int total2 = 0;
+		int total3 = 0;
+		int move1 = 0;
+		int move2 = 0;
+		int move3 = 0;
+		int old1 = 0;
+		int old2 = 0;
+		int old3 = 0;
+		
+		System.out.println(" ________________________________________________________________");
+		System.out.println("| Round |     Player A     |     Player B     |     Player C     |");
+		System.out.println("|       | Old | Dice | New | Old | Dice | New | Old | Dice | New |");
+		System.out.println(" ----------------------------------------------------------------");
+		
+		for(round=0; round<25; round++){
+			ronde++;
+			dice1 = 1+dice.nextInt(6);
+			dice2 = 1+dice.nextInt(6);
+			dice3 = 1+dice.nextInt(6);
+			total1 = move1;
+			total1 += dice1;
+			move1 += dice1;
+			old1 = move1-dice1;
+			
+			if(move1 > 100){
+				total1 = total1 - 100;
+				move1 = 100  - total1;
+			}
+			if(move1 == 13){
+				move1 = 7;
+				total1 = 7;
+			}else if(move1 == 25){
+				move1 = 40;
+				total1 = 40;
+			}else if(move1 == 50){
+				move1 = 38;
+				total1 = 38;
+			}else if(move1 == 63){
+				move1 = 78;
+				total1 = 78;
+			}else if(move1 == 83){
+				move1 = 97;
+				total1 = 97;
+			}else if(move1 == 95){
+				move1 = 76;
+				total1 = 76;
+			}
+			total2 = move2;
+			total2 += dice2;
+			move2 += dice2;
+			old2= move2-dice2;
+			
+			if(move2 > 100){
+				total2 = total2 - 100;
+				move2 = 100  - total2;
+			}
+			if(move2 == 13){
+				move2 = 7;
+				total2 = 7;
+			}else if(move2 == 25){
+				move2 = 40;
+				total2 = 40;
+			}else if(move2 == 50){
+				move2 = 38;
+				total2 = 38;
+			}else if(move2 == 63){
+				move2 = 78;
+				total2 = 78;
+			}else if(move2 == 83){
+				move2 = 97;
+				total2 = 97;
+			}else if(move2 == 95){
+				move2 = 76;
+				total2 = 76;
+			}
+			total3 = move3;
+			total3 += dice3;
+			move3 += dice3;
+			old3 = move3-dice3;
+			
+			if(move3 > 100){
+				total3 = total3 - 100;
+				move3 = 100  - total3;
+			}
+			if(move3 == 13){
+				move3 = 7;
+				total3 = 7;
+			}else if(move3 == 25){
+				move3 = 40;
+				total3 = 40;
+			}else if(move3 == 50){
+				move3 = 38;
+				total3 = 38;
+			}else if(move3 == 63){
+				move3 = 78;
+				total3 = 78;
+			}else if(move3 == 83){
+				move3 = 97;
+				total3 = 97;
+			}else if(move3 == 95){
+				move3 = 76;
+				total3 = 76;
+		}
+			System.out.printf("|%4d   |%4d |%5d |%4d |%4d |%5d |%4d |%4d |%5d |%4d |\n", ronde, old1, dice1, move1, old2, dice2, move2, old3, dice3, move3);
+			System.out.print(" _________________________________________________________________");
+			scan.nextLine();
+			if(move1 == 100){
+				check = true;
+				break;
+			}else if(move2 == 100){
+				check2 = true;
+				break;
+			}else if(move3 == 100){
+				check3 = true;
+				break;
+			}	
+	}
+		System.out.println();
+		System.out.println();
+		System.out.println("Winner");
+		if(check == true && move2 > move3){
+			System.out.println("1. Player A");
+			System.out.println("2. Player B");
+			System.out.println("3. Player C");
+		}else if(check == true && move2 < move3){
+			System.out.println("1. Player A");
+			System.out.println("2. Player C");
+			System.out.println("3. Player B");
+		}else if(check2 == true && move1 > move3){
+			System.out.println("1. Player B");
+			System.out.println("2. Player A");
+			System.out.println("3. Player C");
+		}else if(check2 == true && move1 < move3){
+			System.out.println("1. Player B");
+			System.out.println("2. Player C");
+			System.out.println("3. Player A");
+		}else if(check3 == true && move1 > move2){
+			System.out.println("1. Player C");
+			System.out.println("2. Player A");
+			System.out.println("3. Player B");
+		}else if(check3 == true && move1 < move2){
+			System.out.println("1. Player C");
+			System.out.println("2. Player B");
+			System.out.println("3. Player A");
+		}else{
+			if(move1 > move2 && move2 > move3){
+				System.out.println("1. Player A");
+				System.out.println("2. Player B");
+				System.out.println("3. Player C");
+			}else if(move1 > move3 && move3 > move2){
+				System.out.println("1. Player A");
+				System.out.println("2. Player C");
+				System.out.println("3. Player B");
+			}else if(move2 > move1 && move1 > move3){
+				System.out.println("1. Player B");
+				System.out.println("2. Player A");
+				System.out.println("3. Player C");
+			}else if(move2 > move3 && move3 > move1){
+				System.out.println("1. Player B");
+				System.out.println("2. Player C");
+				System.out.println("3. Player A");
+			}else if(move3 > move1 && move1 > move2){
+				System.out.println("1. Player C");
+				System.out.println("2. Player A");
+				System.out.println("3. Player B");
+			}else if(move3 > move2 && move2 > move1){
+				System.out.println("1. Player C");
+				System.out.println("2. Player B");
+				System.out.println("3. Player A");
+			}
+		}
+}
+	public Snake() {
+		int choose;
+		do {
+			Clear();
+			System.out.println("Snake Ladders");
+			System.out.println("==================================");
+			System.out.println("1. 2 Players");
+			System.out.println("2. 3 Players");
+			System.out.println("3. Exit");
+			System.out.print("CHOOSE>> ");
+			choose = scan.nextInt();
+			scan.nextLine();
+			switch(choose){
+			case 1 :
+				TwoPlayers();
+				break;
+			case 2 :
+				ThreePlayers();
+				break;
+			case 3 : 
+				break;
+			default : 
+				break;
+			}
+		} while (choose != 3);
+	}
+
+	public static void main(String[] args) {
+		new Snake();
+
+	}
+
+}
